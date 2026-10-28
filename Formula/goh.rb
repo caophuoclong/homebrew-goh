@@ -2,28 +2,28 @@
 class Goh < Formula
   desc "Spec-driven terminal autocomplete: IDE-style suggestions in your existing shell"
   homepage "https://github.com/caophuoclong/goh"
-  version "1.0.1"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.0.1/goh-1.0.1-aarch64-apple-darwin.tar.gz"
-      sha256 "2bb60866e0ac2312294d75a7f429b00c2de0c99a4f5261a00b2c3e2c94f1f765"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.1.0/goh-1.1.0-aarch64-apple-darwin.tar.gz"
+      sha256 "e57b0e2de8522026130fe00b860b524ecb70b87c587701c139bfd0d25aab24b8"
     end
     on_intel do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.0.1/goh-1.0.1-x86_64-apple-darwin.tar.gz"
-      sha256 "c8712665ace841e30968ba3f645024f425f046d7fef2c03ac64c118756aba2d9"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.1.0/goh-1.1.0-x86_64-apple-darwin.tar.gz"
+      sha256 "db6d5086c811c8cc07bbf8dc338baca636edb075bdf12c58c599ec51b8bd5771"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.0.1/goh-1.0.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "4b3065601932fb0f33635f6cbb1b73e2f793a519ffe5c4d3e4af4f85ff6b8415"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.1.0/goh-1.1.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "941e325981716ebe4ce119e2460f2d2dd090adb75b4290d802d114c055b01df6"
     end
     on_intel do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.0.1/goh-1.0.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "4ec0a480d63a221d7bceb6f82d5d4400f6214e442c51debd68c79c2c4b4b0bf9"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.1.0/goh-1.1.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "0ed429d9849a119a4a13f2a1aed023f82bd535fa3d4391835037bdccc5a4e5be"
     end
   end
 
@@ -33,11 +33,12 @@ class Goh < Formula
 
   def caveats
     <<~EOS
-      Load the adapter from your shell's startup file, then open a new terminal:
+      Homebrew does not edit your shell files. Run this once, then open a new terminal:
 
-        zsh:   eval "$(goh init zsh)"     # ~/.zshrc, after compinit
-        bash:  eval "$(goh init bash)"    # ~/.bashrc, after bash-completion
-        fish:  goh init fish | source     # ~/.config/fish/config.fish
+        goh setup
+
+      It adds one marked block to ~/.zshrc, ~/.bashrc or fish's config.fish (zsh, bash and fish);
+      `goh setup --uninstall` removes it. By hand: eval "$(goh init zsh)" in ~/.zshrc, after compinit.
 
       The overlay popup (macOS) needs Accessibility access for your terminal; `goh doctor` says what is missing.
       After `brew upgrade goh`, run `goh reload` and `exec $SHELL`.
