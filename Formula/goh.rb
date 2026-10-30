@@ -2,28 +2,28 @@
 class Goh < Formula
   desc "Spec-driven terminal autocomplete: IDE-style suggestions in your existing shell"
   homepage "https://github.com/caophuoclong/goh"
-  version "1.9.0"
+  version "1.10.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.9.0/goh-1.9.0-aarch64-apple-darwin.tar.gz"
-      sha256 "2735bb5aa20f57a6a76313e3b93aeeb1308414ce01764dfacaf5f379ebb8f770"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.10.0/goh-1.10.0-aarch64-apple-darwin.tar.gz"
+      sha256 "e5741d48fb55726e2ef8b4d82c047a944ab4540d25958a10e43217f797f3b73b"
     end
     on_intel do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.9.0/goh-1.9.0-x86_64-apple-darwin.tar.gz"
-      sha256 "4de7b8a43a2e9c6bf18f58947996b6f94bdd79f10589c3d5b6bf3a02a9e9af06"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.10.0/goh-1.10.0-x86_64-apple-darwin.tar.gz"
+      sha256 "8242a7488797a49504dc4faf052259b7d350ceffd87528b338415f0047cc8587"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.9.0/goh-1.9.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "de07cbb566e1e7e7d9f485d72522a1bf1379a18d74e3fed941a3e5fe6eafd967"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.10.0/goh-1.10.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f37474c6eb962eab85157b71c601a47e91da938d6fad2af29f27a43eb2b4cc07"
     end
     on_intel do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.9.0/goh-1.9.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ae25a09d2e357a5f0982692279e0c51b283b7c922deb92ac41d255608e6d98fc"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.10.0/goh-1.10.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "ffc31e601d706b6740605c1bf5e75f1c90a52b629de703adce8163da6360dbae"
     end
   end
 
