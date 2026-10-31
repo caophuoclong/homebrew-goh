@@ -2,33 +2,33 @@
 class Goh < Formula
   desc "Spec-driven terminal autocomplete: IDE-style suggestions in your existing shell"
   homepage "https://github.com/caophuoclong/goh"
-  version "1.11.0"
+  version "2.0.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.11.0/goh-1.11.0-aarch64-apple-darwin.tar.gz"
-      sha256 "ed8e21ce3b3e3bb864d477afdd9e9d5af7b655b65efb2ad78dfc45045a2cf0ed"
+      url "https://github.com/caophuoclong/goh/releases/download/v2.0.0/goh-2.0.0-aarch64-apple-darwin.tar.gz"
+      sha256 "827e31e281adb2b50667b191cf7ae2444cb6b911d412004dfffe6f834172529d"
     end
     on_intel do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.11.0/goh-1.11.0-x86_64-apple-darwin.tar.gz"
-      sha256 "7439fa2d5efdd9bf18916c64e5a64371d6f05c41533c34a6472775a213c9c7d5"
+      url "https://github.com/caophuoclong/goh/releases/download/v2.0.0/goh-2.0.0-x86_64-apple-darwin.tar.gz"
+      sha256 "ffa2bab7afd737e6bbb98fc527afccda3397c27de4b0e3f4976bf6615fe41d88"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.11.0/goh-1.11.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "529beded24329360e9731c0e1dcf048c424543778255f23ef63da79eccb03940"
+      url "https://github.com/caophuoclong/goh/releases/download/v2.0.0/goh-2.0.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "aaefad87b4dd0f3bc1c733a36b734d9532dacfac77aae228902888def62701be"
     end
     on_intel do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.11.0/goh-1.11.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "35ed557ed47ddbf2a6e5d67136d25d2bea652c713b2ab66f6932b94006a2ccd6"
+      url "https://github.com/caophuoclong/goh/releases/download/v2.0.0/goh-2.0.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "fa9dede0abc1945ab85a89c7a861feb8093ab3cfc4b7896a993652d6b7e65157"
     end
   end
 
   def install
-    # macOS: bin/goh-popup links to the executable in libexec/goh-popup.app.
+    # macOS: bin/goh-popup links to the executable in libexec/Goh.app.
     prefix.install "libexec" if File.directory?("libexec")
     bin.install Dir["bin/*"]
   end
