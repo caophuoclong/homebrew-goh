@@ -2,32 +2,34 @@
 class Goh < Formula
   desc "Spec-driven terminal autocomplete: IDE-style suggestions in your existing shell"
   homepage "https://github.com/caophuoclong/goh"
-  version "1.10.1"
+  version "1.11.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.10.1/goh-1.10.1-aarch64-apple-darwin.tar.gz"
-      sha256 "6e1cc4dade0263b80dce066b177c6b9427074a16ad5bcf419dd61ae663307efc"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.11.0/goh-1.11.0-aarch64-apple-darwin.tar.gz"
+      sha256 "ed8e21ce3b3e3bb864d477afdd9e9d5af7b655b65efb2ad78dfc45045a2cf0ed"
     end
     on_intel do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.10.1/goh-1.10.1-x86_64-apple-darwin.tar.gz"
-      sha256 "fc4b3e27ff7e1fe35882ba6bed5deb63dd618ba293e06e11f40e51b3bf655e29"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.11.0/goh-1.11.0-x86_64-apple-darwin.tar.gz"
+      sha256 "7439fa2d5efdd9bf18916c64e5a64371d6f05c41533c34a6472775a213c9c7d5"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.10.1/goh-1.10.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "f7006f691ecf73a36a4175a12b080d43a44db227b3d51956b3f147d94ecc78d2"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.11.0/goh-1.11.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "529beded24329360e9731c0e1dcf048c424543778255f23ef63da79eccb03940"
     end
     on_intel do
-      url "https://github.com/caophuoclong/goh/releases/download/v1.10.1/goh-1.10.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "95effcc3403a26bcf0ccf8a8b3c2d1bf92e6a666f86a3706bb04c64bc00ac591"
+      url "https://github.com/caophuoclong/goh/releases/download/v1.11.0/goh-1.11.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "35ed557ed47ddbf2a6e5d67136d25d2bea652c713b2ab66f6932b94006a2ccd6"
     end
   end
 
   def install
+    # macOS: bin/goh-popup links to the executable in libexec/goh-popup.app.
+    prefix.install "libexec" if File.directory?("libexec")
     bin.install Dir["bin/*"]
   end
 
